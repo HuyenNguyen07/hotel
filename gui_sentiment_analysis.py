@@ -189,7 +189,7 @@ if st.session_state.selected_hotel:
         st.write("### COMMENT")   
         col1, col2 = st.columns([1, 1]) 
         with col1:
-            p_count = selected_hotel[selected_hotel['label']==1]['Reviewer ID].nunique()
+            p_count = selected_hotel[selected_hotel['label']==1]['Reviewer ID'].nunique()
             st.write("Number of Positive Comment",p_count)
             positive_comments = " ".join(comment for comment in selected_hotel['word_positive_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(positive_comments)
@@ -204,7 +204,7 @@ if st.session_state.selected_hotel:
             st.pyplot(plt)
         
         with col2:
-            n_count = selected_hotel[selected_hotel['label']==-1]['Reviewer ID].nunique()
+            n_count = selected_hotel[selected_hotel['label']==-1]['Reviewer ID'].nunique()
             st.write("Number of Negative Comment",n_count)
             negative_comments = " ".join(comment for comment in selected_hotel['word_negative_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(negative_comments)
