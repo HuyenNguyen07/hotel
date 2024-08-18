@@ -69,24 +69,14 @@ if st.session_state.selected_hotel:
             hotel_rank = hotel_rank.replace(" sao trên ","/")
             st.markdown(f"<span style='font-size: 70px;'>{hotel_rank}</span>", unsafe_allow_html=True)
             
-        with col3:
-            st.write("VỊ TRÍ")
-            if address:
-                lat, lon = get_coordinates(address)
-                # if lat and lon:
-                #     # Tạo bản đồ Folium
-                #     m = folium.Map(location=[lat, lon], zoom_start=15, tiles="OpenStreetMap")               
-                #     # Thêm một điểm đánh dấu (marker) trên bản đồ
-                #     folium.Marker([lat, lon], tooltip=address).add_to(m)               
-                #     # Hiển thị bản đồ trong Streamlit
-                #     st_folium(m, width=500, height=310)
-                # else:
-                #     st.write("Unable to find the location. Please try another address.")
-                    
-                if lat and lon:
-                    st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
-                else:
-                    st.write("Unable to find the location. Please try another address.")
+        # with col3:
+        #     st.write("VỊ TRÍ")
+        #     if address:
+        #         lat, lon = get_coordinates(address)                    
+        #         if lat and lon:
+        #             st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
+        #         else:
+        #             st.write("Unable to find the location. Please try another address.")
         
         with col2:
             st.write("HÌNH ẢNH")
