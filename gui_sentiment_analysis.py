@@ -11,7 +11,7 @@ import pickle
 import os
 
 
-os.getcwd()
+# os.getcwd()
 df = pd.read_csv("df_full_hotel.csv")
 
 
