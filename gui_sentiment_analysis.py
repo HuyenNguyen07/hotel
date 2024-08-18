@@ -195,7 +195,7 @@ if st.session_state.selected_hotel:
             l_count = selected_hotel.pivot_table(values='Reviewer ID', index='label', aggfunc='nunique')
             
             # Tạo từ điển để ánh xạ các giá trị label
-            label_mapping = {-1: "negative", 0: "neutral", 1: "positive"}
+            label_mapping = {-1: "Negative", 0: "Neutral", 1: "Positive"}
             # Áp dụng ánh xạ để thay đổi nhãn
             labels = [label_mapping[label] for label in l_count.index]
 
