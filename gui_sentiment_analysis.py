@@ -188,12 +188,17 @@ if st.session_state.selected_hotel:
         #COMMENT
         st.write("### COMMENT")  
         # Vẽ biểu đồ tròn
-        col1, col2 = st.columns([1, 1]) 
+        col1, col2, col3 = st.columns([1, 1, 1]) 
         with col1:
             fig, ax = plt.subplots(figsize=(6,6))
             # Tạo pivot table để đếm số lượng Reviewer ID theo từng nhãn 'label'
             l_count = selected_hotel.pivot_table(values='Reviewer ID', index='label', aggfunc='nunique')
             
+            # Tạo từ điển để ánh xạ các giá trị label
+            label_mapping = {-1: "negative", 0: "neutral", 1: "positive"}
+            # Áp dụng ánh xạ để thay đổi nhãn
+            labels = [label_mapping[label] for label in l_count.index]
+
             # Vẽ biểu đồ tròn
             ax.pie(l_count['Reviewer ID'], labels=l_count.index, autopct='%1.1f%%', startangle=90)
             ax.axis('equal')  # Đảm bảo biểu đồ tròn không bị méo
