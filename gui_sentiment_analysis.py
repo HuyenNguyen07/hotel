@@ -200,7 +200,7 @@ if st.session_state.selected_hotel:
             labels = [label_mapping[label] for label in l_count.index]
 
             # Vẽ biểu đồ tròn
-            ax.pie(l_count['Reviewer ID'], labels=l_count.index, autopct='%1.1f%%', startangle=90)
+            ax.pie(l_count['Reviewer ID'], labels=labels, autopct='%1.1f%%', startangle=90)
             ax.axis('equal')  # Đảm bảo biểu đồ tròn không bị méo
             st.pyplot(fig)
 
