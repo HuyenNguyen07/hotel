@@ -67,7 +67,7 @@ if st.session_state.selected_hotel:
             hotel_rank = selected_hotel['Hotel Rank'].values[0]
             hotel_rank = ' '.join(hotel_rank.split()[:100])
             hotel_rank = hotel_rank.replace(" sao trên ","/")
-            st.markdown(f"<span style='font-size: 70px;'>{hotel_rank}</span>", unsafe_allow_html=True)
+            st.markdown(f"<span style='font-size: 100px;'>{hotel_rank}</span>", unsafe_allow_html=True)
             
         # with col3:
         #     st.write("VỊ TRÍ")
@@ -92,7 +92,7 @@ if st.session_state.selected_hotel:
         col1, col2 = st.columns([1, 1]) 
         with col1:
             avg_score = selected_hotel['Total Score'].mean().round(1)
-            st.markdown(f"**Số điểm đánh giá trung bình:** <span style='font-size: 100px;'>{avg_score}</span>", unsafe_allow_html=True)
+            st.markdown(f"**Số điểm đánh giá trung bình:** <span style='font-size: 50px;'>{avg_score}</span>", unsafe_allow_html=True)
         with col2:
             factor_columns = ['Vị trí', 'Độ sạch sẽ', 'Dịch vụ', 'Tiện nghi', 
                 'Đáng giá tiền', 'Sự thoải mái và chất lượng phòng']
