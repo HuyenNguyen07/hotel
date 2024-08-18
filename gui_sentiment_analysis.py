@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from geopy.geocoders import Nominatim
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -62,7 +61,7 @@ if st.session_state.selected_hotel:
         st.write(" Địa chỉ: ",address)
                 
 
-        col1, col2, col3 = st.columns([1, 1, 1]) 
+        col1, col2 = st.columns([1, 1]) 
         
         with col1:
             st.write("RANK")
@@ -71,15 +70,15 @@ if st.session_state.selected_hotel:
             hotel_rank = hotel_rank.replace(" sao trên ","/")
             st.markdown(f"<span style='font-size: 70px;'>{hotel_rank}</span>", unsafe_allow_html=True)
             
-        with col3:
-            st.write("VỊ TRÍ")
-            if address:
-                lat = selected_hotel['lat'].values[0]
-                lon = selected_hotel['lon'].values[0]
-                if lat and lon:
-                    st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
-                else:
-                    st.write("Unable to find the location. Please try another address.")
+        # with col3:
+        #     st.write("VỊ TRÍ")
+        #     if address:
+        #         lat = selected_hotel['lat'].values[0]
+        #         lon = selected_hotel['lon'].values[0]
+        #         if lat and lon:
+        #             st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
+        #         else:
+        #             st.write("Unable to find the location. Please try another address.")
         
         with col2:
             st.write("HÌNH ẢNH")
