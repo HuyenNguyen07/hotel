@@ -87,7 +87,7 @@ if st.session_state.selected_hotel:
             st.image(file_name, use_column_width=True)
         
         #SCORE
-        st.write("#### SCORE")
+        st.write("### SCORE")
 
         col1, col2 = st.columns([1, 1]) 
         with col1:
@@ -167,7 +167,7 @@ if st.session_state.selected_hotel:
             
         
         #SỐ LƯỢNG KHÁCH
-        st.write("#### CUSTOMER PROFILE")    
+        st.write("### CUSTOMER")    
         
         count_cus = selected_hotel['Reviewer ID'].nunique()
         st.markdown(f"**Số lượt khách hàng đã ở đây:** <span style='font-size: 100px;'>{count_cus}</span>", unsafe_allow_html=True)
@@ -186,9 +186,11 @@ if st.session_state.selected_hotel:
         
         
         #COMMENT
-        st.write("#### COMMENT")   
+        st.write("### COMMENT")   
         col1, col2 = st.columns([1, 1]) 
         with col1:
+            p_count = selected_hotel[selected_hotel['label']==1]['Reviewer ID].nunique()
+            st.write("Number of Positive Comment",p_count)
             positive_comments = " ".join(comment for comment in selected_hotel['word_positive_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(positive_comments)
 
@@ -202,6 +204,8 @@ if st.session_state.selected_hotel:
             st.pyplot(plt)
         
         with col2:
+            n_count = selected_hotel[selected_hotel['label']==-1]['Reviewer ID].nunique()
+            st.write("Number of Negative Comment",n_count)
             negative_comments = " ".join(comment for comment in selected_hotel['word_negative_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(negative_comments)
 
