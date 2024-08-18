@@ -187,6 +187,14 @@ if st.session_state.selected_hotel:
         
         #COMMENT
         st.write("### COMMENT")   
+        # Vẽ biểu đồ tròn
+        fig, ax = plt.subplots()
+        l_count = selected_hotel.pivot_table(values='Reviewer ID', index='label',  aggfunc='nunique')
+        ax.pie(l_count['Reviewer ID'], labels=l_count['label'], autopct='%1.1f%%', startangle=90)
+        ax.axis('equal')  # Đảm bảo biểu đồ tròn không bị méo
+        
+        st.pyplot(fig)
+
         col1, col2 = st.columns([1, 1]) 
         with col1:
             p_count = selected_hotel[selected_hotel['label']==1]['Reviewer ID'].nunique()
