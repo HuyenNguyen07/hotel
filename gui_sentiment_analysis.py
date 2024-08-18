@@ -28,7 +28,6 @@ df = pd.read_csv("df_full_hotel.csv")
 # Cấu hình trang Streamlit
 st.set_page_config(layout="wide")
 # Display
-st.title("Sentiment Analysis")
 st.image('app.jpg', use_column_width=True)
 st.write("HV: NGUYEN THI MY HUYEN")
 
