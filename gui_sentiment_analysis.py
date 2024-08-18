@@ -188,6 +188,7 @@ if st.session_state.selected_hotel:
         #COMMENT
         st.write("### COMMENT")   
         # Vẽ biểu đồ tròn
+        fig, ax = plt.subplots()
         # Tạo pivot table để đếm số lượng Reviewer ID theo từng nhãn 'label'
         l_count = selected_hotel.pivot_table(values='Reviewer ID', index='label', aggfunc='nunique')
         
