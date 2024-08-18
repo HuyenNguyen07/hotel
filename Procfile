@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run streamlit_ham_spam.py
+web: sh setup.sh && streamlit run gui_sentiment_analysis.py
