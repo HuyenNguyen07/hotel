@@ -190,7 +190,7 @@ if st.session_state.selected_hotel:
         col1, col2 = st.columns([1, 1]) 
         with col1:
             p_count = selected_hotel[selected_hotel['label']==1]['Reviewer ID'].nunique()
-            st.write("Number of Positive Comment",p_count)
+            st.markdown(f"**Number of Positive Comment:** <span style='font-size: 50px;'>{p_count}</span>", unsafe_allow_html=True)
             positive_comments = " ".join(comment for comment in selected_hotel['word_positive_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(positive_comments)
 
@@ -205,7 +205,7 @@ if st.session_state.selected_hotel:
         
         with col2:
             n_count = selected_hotel[selected_hotel['label']==-1]['Reviewer ID'].nunique()
-            st.write("Number of Negative Comment",n_count)
+            st.markdown(f"**Number of Negative Comment:** <span style='font-size: 50px;'>{n_count}</span>", unsafe_allow_html=True)
             negative_comments = " ".join(comment for comment in selected_hotel['word_negative_list'].dropna())
             wordcloud = WordCloud(width=800, height=400, background_color='white').generate(negative_comments)
 
