@@ -113,8 +113,8 @@ if st.session_state.selected_hotel:
         with col1: 
         # # # Xu hướng điểm số theo thời gian
             selected_hotel['Review Date'] = pd.to_datetime(selected_hotel['Review Date'])
-            score_by_time = selected_hotel.groupby(selected_hotel['Review Date'].dt.to_period('M'))['Score'].mean()
-            score_by_time.index = score_by_time.index.to_timestamp()  # Chuyển đổi chỉ mục về kiểu datetime
+            selected_hotel['Month'] = selected_hotel['Review Date'].dt.month
+            score_by_time = selected_hotel.groupby(selected_hotel['Month'])['Score'].mean()
 
             # Vẽ biểu đồ đường với matplotlib
             fig, ax = plt.subplots(figsize=(10, 6))
@@ -134,7 +134,6 @@ if st.session_state.selected_hotel:
             st.pyplot(fig)
             
         with col2: 
-            selected_hotel['Month'] = selected_hotel['Review Date'].dt.month
             # Tạo cột 'Month Year' để gộp dữ liệu theo tháng không phân biệt năm
             selected_hotel['Month Name'] = selected_hotel['Review Date'].dt.strftime('%B')  # Tên tháng
 
