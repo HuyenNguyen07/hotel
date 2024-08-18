@@ -170,7 +170,7 @@ if st.session_state.selected_hotel:
         st.write("### CUSTOMER")    
         
         count_cus = selected_hotel['Reviewer ID'].nunique()
-        st.markdown(f"**Số lượt khách hàng đã ở đây:** <span style='font-size: 100px;'>{count_cus}</span>", unsafe_allow_html=True)
+        st.markdown(f"**Số lượt khách hàng đã ở đây:** <span style='font-size: 50px;'>{count_cus}</span>", unsafe_allow_html=True)
         
         
         pivot_table = selected_hotel.pivot_table(values='Score', index='Room Type', columns='Group Name', aggfunc='mean')
