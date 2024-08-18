@@ -112,7 +112,7 @@ if st.session_state.selected_hotel:
         col1, col2 = st.columns([1, 1])   
         with col1: 
         # # # Xu hướng điểm số theo thời gian
-            selected_hotel['Review Date'] = pd.to_datetime(selected_hotel['Review Date'])
+            selected_hotel['Review Date'] = pd.to_datetime(selected_hotel['Review Date'],, errors='coerce')
             selected_hotel['Month'] = selected_hotel['Review Date'].dt.month
             score_by_time = selected_hotel.groupby(selected_hotel['Month'])['Score'].mean()
 
