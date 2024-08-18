@@ -1,5 +1,5 @@
-# !pip install geopy
-# !pip install folium streamlit-folium geopy
+!pip install geopy
+!pip install folium streamlit-folium geopy
 
 import streamlit as st
 import pandas as pd
