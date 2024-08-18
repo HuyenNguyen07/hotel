@@ -24,6 +24,8 @@ def get_coordinates(address):
     else:
         return None, None
 
+df[['lat','lon']] = df['Hotel Address'].apply(lambda x: get_coordinates(x))
+
 # Cấu hình trang Streamlit
 st.set_page_config(layout="wide")
 # Display
@@ -69,14 +71,15 @@ if st.session_state.selected_hotel:
             hotel_rank = hotel_rank.replace(" sao trên ","/")
             st.markdown(f"<span style='font-size: 70px;'>{hotel_rank}</span>", unsafe_allow_html=True)
             
-        # with col3:
-        #     st.write("VỊ TRÍ")
-        #     if address:
-        #         lat, lon = get_coordinates(address)                    
-        #         if lat and lon:
-        #             st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
-        #         else:
-        #             st.write("Unable to find the location. Please try another address.")
+        with col3:
+            st.write("VỊ TRÍ")
+            if address:
+                lat = selected_hotel['lat'].values[0]
+                lon = selected_hotel['lon'].values[0]
+                if lat and lon:
+                    st.map(pd.DataFrame({'lat': [lat], 'lon': [lon]}))
+                else:
+                    st.write("Unable to find the location. Please try another address.")
         
         with col2:
             st.write("HÌNH ẢNH")
