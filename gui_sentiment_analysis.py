@@ -90,9 +90,8 @@ if st.session_state.selected_hotel:
         
         with col2:
             st.write("HÌNH ẢNH")
-            if st.session_state.selected_hotel == "Khách sạn Mường Thanh Luxury Nha Trang (Muong Thanh Luxury Nha Trang Hotel)":
-                file_name = "muongthanh.jpg"
-            else: 
+            file_name = "muongthanh.jpg"
+            if st.session_state.selected_hotel != "Khách sạn Mường Thanh Luxury Nha Trang (Muong Thanh Luxury Nha Trang Hotel)":
                 file_name = "images.jpeg"
             st.image(file_name, use_column_width=True)
         
