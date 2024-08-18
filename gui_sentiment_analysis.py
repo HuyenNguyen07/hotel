@@ -1,3 +1,7 @@
+
+pip install geopy
+pip install folium streamlit-folium geopy
+
 import streamlit as st
 import pandas as pd
 import numpy as np
