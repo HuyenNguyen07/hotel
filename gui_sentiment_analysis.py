@@ -14,16 +14,16 @@ import os
 df = pd.read_csv("df_full_hotel.csv")
 
 
-# Hàm lấy lat, lon
-def get_coordinates(address):
-    geolocator = Nominatim(user_agent="geoapiExercises")
-    location = geolocator.geocode(address)
-    if location:
-        return location.latitude, location.longitude
-    else:
-        return None, None
+# # Hàm lấy lat, lon
+# def get_coordinates(address):
+#     geolocator = Nominatim(user_agent="geoapiExercises")
+#     location = geolocator.geocode(address)
+#     if location:
+#         return location.latitude, location.longitude
+#     else:
+#         return None, None
 
-df[['lat','lon']] = df['Hotel Address'].apply(lambda x: get_coordinates(x))
+# df[['lat','lon']] = df['Hotel Address'].apply(lambda x: get_coordinates(x))
 
 # Cấu hình trang Streamlit
 st.set_page_config(layout="wide")
