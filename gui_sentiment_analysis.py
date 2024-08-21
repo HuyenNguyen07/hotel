@@ -433,7 +433,7 @@ elif choice == "Business Analysis":
 
 elif choice == "Recommendation":
     st.write("Ví dụ:")
-    st.images("vidu.jpg")
+    st.images("vidu.png")
     
     flag = False
     lines = None
