@@ -195,14 +195,14 @@ def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords
 
 vectorizer = TfidfVectorizer()
 
-# Đọc vectorizer
-# with open(vectorizer.pkl, 'rb') as file:  
-#     vectorizer = pickle.load(file)
+Đọc vectorizer
+with open("vectorizer.pkl", 'rb') as file:  
+    vectorizer = pickle.load(file)
 
 
-# Đọc model
-# with open("sentiment_analysis.pkl", 'rb') as file:  
-#     sa_model = pickle.load(file)
+Đọc model
+with open("sa_model.pkl", 'rb') as file:  
+    sa_model = pickle.load(file)
 
 
 # # Hàm lấy lat, lon
