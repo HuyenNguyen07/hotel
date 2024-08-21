@@ -263,5 +263,10 @@ elif choice == "Recommendation":
         if len(lines)>0:
             st.code(lines)        
             y_pred_new = sa_model.predict(x_new)       
-            st.code("New predictions (0: Ham, 1: Spam): " + str(y_pred_new)) 
+        if y_pred_new == 1:
+            st.write("POSITIVE COMMENT")
+        elif y_pred_new == 0:
+            st.write("NEUTRAL COMMENT")
+        elif y_pred_new == -1:
+            st.write("NEGATIVE COMMENT")
 
