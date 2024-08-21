@@ -444,12 +444,14 @@ elif choice == "Recommendation":
         if len(lines)>0:
             st.code(lines)
             x_new = pre_process(content,emoji_dict, english_dict, teen_dict, wrong_lst, stopwords_lst)
-            x_new = vectorizer.transform(x_new)
+            x_new = vectorizer.transform([x_new])
             y_pred_new = sa_model.predict(x_new)       
         if y_pred_new == 1:
             st.write("POSITIVE COMMENT")
-        elif y_pred_new == 0:
-            st.write("NEUTRAL COMMENT")
         elif y_pred_new == -1:
             st.write("NEGATIVE COMMENT")
+        else:
+            st.write("NEUTRAL COMMENT")
+   
+            
 
