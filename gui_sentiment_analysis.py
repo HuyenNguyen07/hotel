@@ -251,26 +251,15 @@ elif choice == "Business Analysis":
             st.write(f"Không tìm thấy khách sạn với ID: {st.session_state.selected_hotel}")
 
 elif choice == "Recommendation":
-    # st.subheader("Select data")
     flag = False
-    # lines = None
-    # type = st.radio("Upload data or Input data?", options=("Upload", "Input"))
-    # if type=="Upload":
-    #     # Upload file
-    #     uploaded_file_1 = st.file_uploader("Choose a file", type=['txt', 'csv'])
-    #     if uploaded_file_1 is not None:
-    #         lines = pd.read_csv(uploaded_file_1, header=None)
-    #         st.dataframe(lines)            
-    #         lines = lines[0]     
-    #         flag = True                          
-    # if type=="Input":        
+    lines = None
     content = st.text_area(label="Input your content:")
     if content!="":
         lines = np.array([content])
         flag = True
     
     if flag:
-        st.write("Content:")
+        st.write("Bên dưới là prediction cho comment: ")
         if len(lines)>0:
             st.code(lines)        
             y_pred_new = sa_model.predict(x_new)       
