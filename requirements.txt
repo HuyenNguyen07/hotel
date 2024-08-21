@@ -9,5 +9,6 @@ folium
 wordcloud
 underthesea
 regex
+demoji
 nltk
 pyvi
