@@ -17,9 +17,9 @@ st.set_page_config(layout="wide")
 df = pd.read_csv("df_full_hotel.csv")
 
 # Đọc model
-pkl_filename = "sentiment_analysis.pkl"
-with open(pkl_filename, 'rb') as file:  
-    sa_model = pickle.load(file)
+# pkl_filename = "sentiment_analysis.pkl"
+# with open(pkl_filename, 'rb') as file:  
+#     sa_model = pickle.load(file)
 
 
 # # Hàm lấy lat, lon
