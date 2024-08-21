@@ -10,6 +10,9 @@ import pickle
 import os
 
 
+# Cấu hình trang Streamlit
+st.set_page_config(layout="wide")
+
 # os.getcwd()
 df = pd.read_csv("df_full_hotel.csv")
 
@@ -33,9 +36,6 @@ if choice == 'Home':
     st.subheader("[Trang chủ](https://csc.edu.vn)") 
 
 elif choice == "Business Analysis":
-
-    # Cấu hình trang Streamlit
-    st.set_page_config(layout="wide")
     # Display
     st.image('app.jpg', use_column_width=True)
     st.write("HV: NGUYEN THI MY HUYEN")
