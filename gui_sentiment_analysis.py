@@ -193,8 +193,6 @@ def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords
   print(comment)
   return comment
 
-vectorizer = TfidfVectorizer()
-
 # Đọc vectorizer
 with open("vectorizer.pkl", 'rb') as file:  
     vectorizer = pickle.load(file)
