@@ -432,6 +432,9 @@ elif choice == "Business Analysis":
             st.write(f"Không tìm thấy khách sạn với ID: {st.session_state.selected_hotel}")
 
 elif choice == "Recommendation":
+    st.write("Ví dụ:)
+    st.images("vidu.jpg")
+    
     flag = False
     lines = None
     content = st.text_area(label="Input your content:")
