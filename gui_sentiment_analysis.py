@@ -16,6 +16,13 @@ st.set_page_config(layout="wide")
 # os.getcwd()
 df = pd.read_csv("df_full_hotel.csv")
 
+#6. Load models 
+# Đọc model
+# import pickle
+pkl_filename = "sentiment_analysis_model.pkl"
+with open(pkl_filename, 'rb') as file:  
+    sa_model = pickle.load(file)
+
 
 # # Hàm lấy lat, lon
 # def get_coordinates(address):
@@ -33,14 +40,12 @@ choice = st.sidebar.selectbox('Menu', menu)
 
 
 if choice == 'Home':    
-    st.subheader("[Trang chủ](https://csc.edu.vn)") 
-
+    st.subheader("[Đồ án TN Data Science](https://csc.edu.vn/data-science-machine-learning/Do-An-Tot-Nghiep-Data-Science---Machine-Learning_229)")
+    st.write("HV: NGUYEN THI MY HUYEN")
+    st.image('app.jpg', use_column_width=True)
 elif choice == "Business Analysis":
     # Display
     st.image('app.jpg', use_column_width=True)
-    st.write("HV: NGUYEN THI MY HUYEN")
-
-
     st.session_state.df = df
 
     # Kiểm tra xem 'selected_hotel' đã có trong session_state hay chưa
@@ -246,4 +251,30 @@ elif choice == "Business Analysis":
             
         else:
             st.write(f"Không tìm thấy khách sạn với ID: {st.session_state.selected_hotel}")
+
+elif choice == "Recommendation":
+    st.subheader("Select data")
+    flag = False
+    lines = None
+    type = st.radio("Upload data or Input data?", options=("Upload", "Input"))
+    if type=="Upload":
+        # Upload file
+        uploaded_file_1 = st.file_uploader("Choose a file", type=['txt', 'csv'])
+        if uploaded_file_1 is not None:
+            lines = pd.read_csv(uploaded_file_1, header=None)
+            st.dataframe(lines)            
+            lines = lines[0]     
+            flag = True                          
+    if type=="Input":        
+        content = st.text_area(label="Input your content:")
+        if content!="":
+            lines = np.array([content])
+            flag = True
+    
+    if flag:
+        st.write("Content:")
+        if len(lines)>0:
+            st.code(lines)        
+            y_pred_new = sa_model.predict(x_new)       
+            st.code("New predictions (0: Ham, 1: Spam): " + str(y_pred_new)) 
 
