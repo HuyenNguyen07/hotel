@@ -22,6 +22,7 @@ import regex
 import demoji
 from pyvi import ViPosTagger, ViTokenizer
 import string
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 ##LOAD EMOJICON
 file = open('emojicon.txt', 'r', encoding="utf8")
