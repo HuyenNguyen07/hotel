@@ -7,12 +7,10 @@ scikit-learn
 geopy
 folium
 wordcloud
-underthesea
 word_tokenize
 pos_tag
 sent_tokenize
 regex
-pyvi
 ViPosTagger
 ViTokenizer
 string
