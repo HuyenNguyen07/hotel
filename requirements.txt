@@ -11,6 +11,4 @@ word_tokenize
 pos_tag
 sent_tokenize
 regex
-ViPosTagger
-ViTokenizer
-string
+
