@@ -195,9 +195,13 @@ def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords
 
 vectorizer = TfidfVectorizer()
 
+# Đọc vectorizer
+# with open(vectorizer.pkl, 'rb') as file:  
+#     vectorizer = pickle.load(file)
+
+
 # Đọc model
-# pkl_filename = "sentiment_analysis.pkl"
-# with open(pkl_filename, 'rb') as file:  
+# with open("sentiment_analysis.pkl", 'rb') as file:  
 #     sa_model = pickle.load(file)
 
 
@@ -442,6 +446,7 @@ elif choice == "Recommendation":
         if len(lines)>0:
             st.code(lines)
             x_new = pre_process(content,emoji_dict, english_dict, teen_dict, wrong_lst, stopwords_lst)
+            st.write(x_new)
             x_new = vectorizer.transform([x_new])
             st.write(x_new)
             y_pred_new = sa_model.predict(x_new)       
