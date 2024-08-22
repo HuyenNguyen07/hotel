@@ -435,7 +435,7 @@ elif choice == "Recommendation":
     
     flag = False
     lines = None
-    content = st.text_area(label="Input your content:")
+    content = st.text_area(label="Input your comment:")
     if content!="":
         lines = np.array([content])
         flag = True
