@@ -450,10 +450,8 @@ elif choice == "Recommendation":
             y_pred_new = sa_model.predict(x_new)
         if y_pred_new == 1:
             st.write("POSITIVE COMMENT")
-        elif y_pred_new == -1:
-            st.write("NEGATIVE COMMENT")
         else:
-            st.write("NEUTRAL COMMENT")
+            st.write("NEGATIVE COMMENT")
    
             
 
