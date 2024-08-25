@@ -239,7 +239,8 @@ if choice == 'Home':
     
     st.write('## PROBLEM STATEMENT')
     st.write("Du lịch phát triển, các khách sạn và resort đang nỗ lực không ngừng để cải thiện chất lượng phòng ốc, các tiện ích đi kèm, cũng như thái độ phục vụ nhằm duy trì uy tín và thu hút thêm khách hàng mới \n⇒ Làm thế nào để hiểu rõ hơn về khách hàng của mình, nắm bắt được họ đánh giá về dịch vụ ra sao để không ngừng cải thiện và nâng cao chất lượng phục vụ?")
-
+    st.write('## OBJECTIVE')
+    st.write(Xây dựng hệ thống \n - Phân loại các phản hồi của khách hàng thành các nhóm: tích cực, tiêu cực, trung tính.\n - Thống kê, cung cấp insight cụ thể, chính xác cho cho chủ khách sạn/ resort khi họ đăng nhập vào hệ thống, giúp họ thể biết được những phản hồi nhanh chóng của khách hàng về dịch vụ của họ để cải thiện hơn trong dịch vụ")
 
 elif choice == "Business Analysis":
     # Display
