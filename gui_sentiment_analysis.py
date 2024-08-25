@@ -465,12 +465,12 @@ elif choice == "Recommendation":
             n_n_word = find_words(x_new,negative_words)
             st.write(n_p_word)
             st.write(n_n_word)
-            if n_p_word > n_n_word:
-                st.write("POSITIVE COMMENT")
-            elif  n_p_word < n_n_word:
-                st.write("NEGATIVE COMMENT")
-            elif n_p_word = n_n_word:
-                st.write("NEUTRAL COMMENT")
+        if n_p_word > n_n_word:
+            st.write("POSITIVE COMMENT")
+        elif n_p_word < n_n_word:
+            st.write("NEGATIVE COMMENT")
+        elif n_p_word = n_n_word:
+            st.write("NEUTRAL COMMENT")
    
             
 
