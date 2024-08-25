@@ -468,9 +468,9 @@ elif choice == "Recommendation":
             if n_p_word > n_n_word:
                 st.write("POSITIVE COMMENT")
             elif  n_p_word < n_n_word:
-                 st.write("NEGATIVE COMMENT")
+                st.write("NEGATIVE COMMENT")
             elif n_p_word = n_n_word:
-                 st.write("NEUTRAL COMMENT")
+                st.write("NEUTRAL COMMENT")
    
             
 
