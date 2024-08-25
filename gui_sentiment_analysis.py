@@ -198,7 +198,7 @@ positive_words=['vừa_vặn', 'ưng_ý', 'an_tâm', 'đáng_tiền', 'tận_hư
                 'xuất_sắc', 'đầy_đủ', 'sạch', 'vui_vẻ', 'hiếm_có', 'chăm_chỉ', 'cảm_động', 'cẩn_thận', 'tốn_ít_thời_gian', 'dễ_sử_dụng', 'hiệu_quả', 'thú_vị', 'ấn_tượng',
                 'tận_tâm', 'gần', 'phù_hợp', 'tiện_lợi', 'thân_thiện', 'phục_vụ_tốt', 'chu_đáo', 'cao_cấp', 'rất_tốt', 'tuyệt_vời', 'hoà_nhã', 'hào_hứng', 'làm_hài_lòng',
                 'sáng_sủa', 'hài_lòng', 'nổi_trội', 'độc_đáo', 'nhiệt_tình', 'rẻ', 'hấp_dẫn', 'nổi_bật', 'tinh_tế', 'ổn', 'rộng', 'thoải_mái', 'đam_mê', 'rất_thích', 'tốt',
-                'gây_ấn_tượng', 'thuận_tiện', 'sáng_tạo', 'sạch_sẽ', 'nhanh', 'thúc_đẩy', 'đáng_giá', 'chỉnh_chu', 'ngon', 'đẳng_cấp', 'đáng_tin_cậy', 'tuyệt_hảo','yên_tĩnh','quay_lại','phù_hợp','ưu_đãi','phong_phú','đa_dạng',]
+                'gây_ấn_tượng', 'thuận_tiện', 'sáng_tạo', 'sạch_sẽ', 'nhanh', 'thúc_đẩy', 'đáng_giá', 'chỉnh_chu','sạch', 'ngon', 'đẳng_cấp', 'đáng_tin_cậy', 'tuyệt_hảo','yên_tĩnh','quay_lại','phù_hợp','ưu_đãi','phong_phú','đa_dạng',]
 
 negative_words =['không_chuyên_nghiệp','bẩn','hôi','không_an_toàn','cũ','xấu','không_linh_hoạt','gây_khó_dễ','chậm','không_phản_hồi','chán','không_tiện_lợi','không_rõ_ràng',
                  'quá_tệ','không_ưng_ý','không_đáng_tin_cậy','không_tốt','tệ','không_hợp','khó_xử','không_thể_chấp_nhận','rối_rắm','rất_tệ','dơ','kinh_khủng','khó_khăn','nóng',
