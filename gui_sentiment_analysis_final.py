@@ -234,7 +234,7 @@ choice = st.sidebar.selectbox('Menu', menu)
 
 if choice == 'Home':    
     st.subheader("[Đồ án TN Data Science](https://csc.edu.vn/data-science-machine-learning/Do-An-Tot-Nghiep-Data-Science---Machine-Learning_229)")
-    st.write("HV: NGUYEN THI MY HUYEN")
+    st.write("HV: NGUYỄN THỊ MỶ HUYỀN - LÝ NGỌC TƯỜNG MINH")
     st.image('app.jpg', use_column_width=True)
 elif choice == "Business Analysis":
     # Display
@@ -463,8 +463,6 @@ elif choice == "Recommendation":
             # y_pred_new = sa_model.predict(x_new)
             n_p_word = find_words(x_new,positive_words)
             n_n_word = find_words(x_new,negative_words)
-            st.write(n_p_word)
-            st.write(n_n_word)
         if n_p_word > n_n_word:
             st.write("POSITIVE COMMENT")
         elif n_p_word < n_n_word:
