@@ -203,6 +203,12 @@ with open("sa_model.pkl", 'rb') as file:
     sa_model = pickle.load(file)
 
 
+
+# Đọc model
+with open("sentiment_analysis.pkl", 'rb') as file:  
+    model = pickle.load(file)
+
+
 # # Hàm lấy lat, lon
 # def get_coordinates(address):
 #     geolocator = Nominatim(user_agent="geoapiExercises")
