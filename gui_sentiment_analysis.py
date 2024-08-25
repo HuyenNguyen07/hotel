@@ -173,7 +173,7 @@ def find_words(document, list_of_words):
             word_count += count
             word_list.append(word)
 
-    return word_count, word_list
+    return word_count
 
 
 def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords_lst):
@@ -192,6 +192,20 @@ def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords
   comment = remove_stopword(comment, stopwords_lst)
   print(comment)
   return comment
+
+
+positive_words=['vừa_vặn', 'ưng_ý', 'an_tâm', 'đáng_tiền', 'tận_hưởng', 'cải_thiện', 'rộng_rãi', 'dễ_thương', 'đẹp', 'thoáng','thích', 'an_toàn', 'hoàn_hảo', 'chất_lượng', 'dễ dàng',
+                'xuất_sắc', 'đầy_đủ', 'sạch', 'vui_vẻ', 'hiếm_có', 'chăm_chỉ', 'cảm_động', 'cẩn_thận', 'tốn_ít_thời_gian', 'dễ_sử_dụng', 'hiệu_quả', 'thú_vị', 'ấn_tượng',
+                'tận_tâm', 'gần', 'phù_hợp', 'tiện_lợi', 'thân_thiện', 'phục_vụ_tốt', 'chu_đáo', 'cao_cấp', 'rất_tốt', 'tuyệt_vời', 'hoà_nhã', 'hào_hứng', 'làm_hài_lòng',
+                'sáng_sủa', 'hài_lòng', 'nổi_trội', 'độc_đáo', 'nhiệt_tình', 'rẻ', 'hấp_dẫn', 'nổi_bật', 'tinh_tế', 'ổn', 'rộng', 'thoải_mái', 'đam_mê', 'rất_thích', 'tốt',
+                'gây_ấn_tượng', 'thuận_tiện', 'sáng_tạo', 'sạch_sẽ', 'nhanh', 'thúc_đẩy', 'đáng_giá', 'chỉnh_chu', 'ngon', 'đẳng_cấp', 'đáng_tin_cậy', 'tuyệt_hảo','yên_tĩnh','quay_lại','phù_hợp','ưu_đãi','phong_phú','đa_dạng',]
+
+negative_words =['không_chuyên_nghiệp','bẩn','hôi','không_an_toàn','cũ','xấu','không_linh_hoạt','gây_khó_dễ','chậm','không_phản_hồi','chán','không_tiện_lợi','không_rõ_ràng',
+                 'quá_tệ','không_ưng_ý','không_đáng_tin_cậy','không_tốt','tệ','không_hợp','khó_xử','không_thể_chấp_nhận','rối_rắm','rất_tệ','dơ','kinh_khủng','khó_khăn','nóng',
+                 'không_thích','phức_tạp','thất_vọng','không_phù_hợp','không_thoải_mái','không_đáng','khủng_khiếp','tồi_tệ','không_ổn','không_ấn_tượng','không_hài_lòng','tối',
+                 'cải_thiện','kém_chất_lượng','kém','đắt','không_đẹp','thất_bại','không_sạch_sẽ','lâu','không_đáng_giá','nguy_hiểm','không_thân_thiện','không_chắc_chắn','buồn',
+                 'không_đáng_tiền','rườm_rà','tồi','khó_chịu','tệ_hại','chưa_đẹp',"bực","yếu","không_được_khắc_phục","bất_tiện","khắc_phục","hư","hư_hỏng","hỏng","không_quay_lại",
+                 "không_có","thiếu","quan_ngại","ái_ngại","không_có","không_chọn","điểm_trừ","mệt_mỏi","trung_bình"]
 
 # Đọc vectorizer
 with open("vectorizer.pkl", 'rb') as file:  
@@ -447,10 +461,14 @@ elif choice == "Recommendation":
             x_new = pre_process(content,emoji_dict, english_dict, teen_dict, wrong_lst, stopwords_lst)
             x_new = vectorizer.transform([x_new])
             y_pred_new = sa_model.predict(x_new)
-        if y_pred_new == 1:
-            st.write("POSITIVE COMMENT")
-        else:
-            st.write("NEGATIVE COMMENT")
+            n_p_word = find_words(x_new,positive_words)
+            n_n_word = find_words(x_new,negative_words)
+            if n_p_word > n_n_word:
+                st.write("POSITIVE COMMENT")
+            elif  n_p_word < n_n_word:
+                 st.write("NEGATIVE COMMENT")
+            elif n_p_word = n_n_word:
+                 st.write("NEUTRAL COMMENT")
    
             
 
