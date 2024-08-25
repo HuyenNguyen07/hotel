@@ -238,8 +238,7 @@ if choice == 'Home':
     st.image('app.jpg', use_column_width=True)
     
     st.write('## PROBLEM STATEMENT')
-    st.write("Du lịch phát triển, các khách sạn và resort đang nỗ lực không ngừng để cải thiện chất lượng phòng ốc, các tiện ích đi kèm, cũng như thái độ phục vụ nhằm duy trì uy tín và thu hút thêm khách hàng mới
-⇒ Làm thế nào để hiểu rõ hơn về khách hàng của mình, nắm bắt được họ đánh giá về dịch vụ ra sao để không ngừng cải thiện và nâng cao chất lượng phục vụ?")
+    st.write("Du lịch phát triển, các khách sạn và resort đang nỗ lực không ngừng để cải thiện chất lượng phòng ốc, các tiện ích đi kèm, cũng như thái độ phục vụ nhằm duy trì uy tín và thu hút thêm khách hàng mới \n⇒ Làm thế nào để hiểu rõ hơn về khách hàng của mình, nắm bắt được họ đánh giá về dịch vụ ra sao để không ngừng cải thiện và nâng cao chất lượng phục vụ?")
 
 
 elif choice == "Business Analysis":
