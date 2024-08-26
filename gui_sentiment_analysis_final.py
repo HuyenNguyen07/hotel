@@ -177,8 +177,8 @@ def find_words(document, list_of_words):
 
 
 def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords_lst):
-  comment = process_text(comment, emoji_dict, english_dict, teen_dict, wrong_lst)
-  print(comment)
+  # comment = process_text(comment, emoji_dict, english_dict, teen_dict, wrong_lst)
+  # print(comment)
   comment = covert_unicode(comment)
   print(comment)
   comment = covert_unicode(comment)
