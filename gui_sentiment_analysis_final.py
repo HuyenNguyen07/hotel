@@ -467,6 +467,7 @@ elif choice == "Recommendation":
             x_new = pre_process(content,emoji_dict, english_dict, teen_dict, wrong_lst, stopwords_lst)
             # x_new = vectorizer.transform([x_new])
             # y_pred_new = sa_model.predict(x_new)
+            st.write(x_new)
             n_p_word = find_words(x_new,positive_words)
             n_n_word = find_words(x_new,negative_words)
             st.write(n_n_word)
