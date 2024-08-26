@@ -200,7 +200,7 @@ positive_words=['vừa_vặn', 'ưng_ý', 'an_tâm', 'đáng_tiền', 'tận_hư
                 'sáng_sủa', 'hài_lòng', 'nổi_trội', 'độc_đáo', 'nhiệt_tình', 'rẻ', 'hấp_dẫn', 'nổi_bật', 'tinh_tế', 'ổn', 'rộng', 'thoải_mái', 'đam_mê', 'rất_thích', 'tốt',
                 'gây_ấn_tượng', 'thuận_tiện', 'sáng_tạo', 'sạch_sẽ', 'nhanh', 'thúc_đẩy', 'đáng_giá', 'chỉnh_chu','sạch', 'ngon', 'đẳng_cấp', 'đáng_tin_cậy', 'tuyệt_hảo','yên_tĩnh','quay_lại','phù_hợp','ưu_đãi','phong_phú','đa_dạng',]
 
-negative_words =['không_chuyên_nghiệp','bẩn','hôi','không_an_toàn','cũ','xấu','không_linh_hoạt','gây_khó_dễ','chậm','không_phản_hồi','chán','không_tiện_lợi','không_rõ_ràng',
+negative_words =['tệ','không_chuyên_nghiệp','bẩn','hôi','không_an_toàn','cũ','xấu','không_linh_hoạt','gây_khó_dễ','chậm','không_phản_hồi','chán','không_tiện_lợi','không_rõ_ràng',
                  'quá_tệ','không_ưng_ý','không_đáng_tin_cậy','không_tốt','tệ','không_hợp','khó_xử','không_thể_chấp_nhận','rối_rắm','rất_tệ','dơ','kinh_khủng','khó_khăn','nóng',
                  'không_thích','phức_tạp','thất_vọng','không_phù_hợp','không_thoải_mái','không_đáng','khủng_khiếp','tồi_tệ','không_ổn','không_ấn_tượng','không_hài_lòng','tối',
                  'cải_thiện','kém_chất_lượng','kém','đắt','không_đẹp','thất_bại','không_sạch_sẽ','lâu','không_đáng_giá','nguy_hiểm','không_thân_thiện','không_chắc_chắn','buồn',
