@@ -189,8 +189,8 @@ def pre_process(comment,emoji_dict, english_dict, teen_dict, wrong_lst,stopwords
   print(comment)
   comment = process_postag_thesea(comment)
   print(comment)
-  comment = remove_stopword(comment, stopwords_lst)
-  print(comment)
+  # comment = remove_stopword(comment, stopwords_lst)
+  # print(comment)
   return comment
 
 
